@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 2.8)
+project(mininal_openpose)
+find_package(OpenCV REQUIRED)
+find_package(CUDA REQUIRED)
+cuda_add_executable(mininal_openpose main.cu nmsBase.cu)
+SET(CMAKE_CXX_FLAGS "-O3")
+target_link_libraries(mininal_openpose ${OpenCV_LIBS})
